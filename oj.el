@@ -2,7 +2,7 @@
 (require 'webclient)
 (require 'ido)
 
-(setq url-proxy-services '(("http" . "localhost:8888")))
+;(setq url-proxy-services '(("http" . "localhost:8888")))
 (setq debug-on-error t)
 
 (defvar oj-hook nil "hook for do something before request")
@@ -17,7 +17,7 @@
   "dynamic request site"
   (interactive "sEnter site name: \nsEnter action ")
   (run-hook-with-args 'oj-hook site-symbol action)
-  (Request-site (symbol-value (intern site-symbol)) (intern action)))
+  (request-site (symbol-value (intern site-symbol)) (intern action)))
 
 ;;;;;;;;;;;;poj
 (defvar poj (make-wc-site :url "http://poj.org" :forms '(
@@ -200,7 +200,7 @@
 								   (make-wc-form
 								    :action "Login"
 								    :fields `(
-									      (account "your-name")
+									      (account "ifree")
 									      (passwd ,(read-passwd "input your passwd: "))
 									      (returnPage "/Problems")
 									      (submit "Submit"))))
