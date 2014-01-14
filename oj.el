@@ -2,7 +2,7 @@
 (require 'webclient)
 (require 'ido)
 
-(setq url-proxy-services '(("http" . "localhost:8888")))
+;(setq url-proxy-services '(("http" . "localhost:8888")))
 (setq debug-on-error t)
 
 (defvar oj-hook nil "hook for do something before request")
